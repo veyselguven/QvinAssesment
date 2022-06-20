@@ -1,7 +1,7 @@
 import React from "react";
 
 const Values = () => {
-  return <div>Value</div>;
+  return <div>Company Values</div>;
 };
 
 export default Values;
