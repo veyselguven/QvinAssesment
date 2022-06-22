@@ -29,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 // router of team
+app.use("/api/team", require("./api/team"));
 
 // router of candidate
 
