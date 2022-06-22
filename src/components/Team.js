@@ -26,7 +26,7 @@ const Team = (props) => {
 
       {teams.map((team) => {
         return (
-          <ul>
+          <ul key={team.id}>
             <img src={team.picture} />
             <li>{team.name}</li>
             <li>{team.title}</li>

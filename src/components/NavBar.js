@@ -4,7 +4,7 @@ import { Link } from "react-scroll/modules";
 const NavBar = () => {
   return (
     <div>
-      <nav class="flex align-center">
+      <nav className="flex align-center">
         <ul>
           <li>
             <Link to="about">
@@ -15,6 +15,9 @@ const NavBar = () => {
             </Link>
             <Link to="team">
               <button>Team</button>
+            </Link>
+            <Link to="home">
+              <button>Home</button>
             </Link>
           </li>
         </ul>
