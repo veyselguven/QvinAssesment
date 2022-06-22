@@ -1,15 +1,17 @@
 const db = require("./database");
 const Team = require("./team");
-const Candidate = require("./candidate");
+
 const Job = require("./job");
+const Application = require("./application");
+
 // ?
-Candidate.hasMany(Job);
-Job.belongsTo(Candidate);
+Job.hasMany(Application);
+Application.belongsTo(Job);
 
 module.exports = {
   // Include your models in this exports object as well!
   db,
-  Candidate,
   Job,
   Team,
+  Application,
 };

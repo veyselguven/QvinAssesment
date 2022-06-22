@@ -5,6 +5,7 @@ const { Team } = require("../db/index");
 router.get("/", async (req, res, next) => {
   try {
     const allTeam = await Team.findAll();
+    //console.log(allTeam);
     res.send(allTeam);
   } catch (err) {
     console.log("err is :", err);

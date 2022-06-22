@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("./database");
 
-const Candidate = db.define("candidate", {
+const Application = db.define("application", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -23,5 +23,4 @@ const Candidate = db.define("candidate", {
     allowNull: false,
   },
 });
-
-module.exports = Candidate;
+module.exports = Application;

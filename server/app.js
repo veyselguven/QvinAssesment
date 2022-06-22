@@ -10,6 +10,29 @@ app.use(morgan("dev"));
 // body parsing middleware
 app.use(express.json());
 
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "x-auth-token, content-type, authorization, Authorization"
+    );
+    return res.status(200).send();
+  }
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.header("Access-Control-Expose-Headers", "authorization");
+  res.header("Access-Control-Expose-Headers", "Authorization");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, x-auth-token, authorization, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization"
+  );
+  next();
+});
+
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "..", "public/index.html"))
 );
@@ -31,7 +54,7 @@ app.use((req, res, next) => {
 // router of team
 app.use("/api/team", require("./api/team"));
 
-// router of candidate
+// router of application
 
 // job router
 

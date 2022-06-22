@@ -6,10 +6,11 @@ import axios from "axios";
 const Team = (props) => {
   const [teams, setTeams] = useState([]);
 
-  let url = "./api/team";
+  let url = "http://localhost:3001/api/team";
   async function fetchData() {
     try {
       const result = await axios.get(url);
+      console.log("result", result);
       setTeams(result.data);
     } catch (e) {
       console.log(console.error);
@@ -26,9 +27,9 @@ const Team = (props) => {
       {teams.map((team) => {
         return (
           <ul>
+            <img src={team.picture} />
             <li>{team.name}</li>
             <li>{team.title}</li>
-            <li>{team.picture}</li>
           </ul>
         );
       })}

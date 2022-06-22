@@ -2,7 +2,7 @@ const { db } = require("./server/db");
 
 const Team = require("./server/db/team");
 const Job = require("./server/db/job");
-const Candidate = require("./server/db/candidate");
+const Application = require("./server/db/application");
 
 const teams = [
   {
@@ -118,8 +118,14 @@ const jobs = [
   { id: 4, title: "Product Lead,Menlo Park", url: "afadf" },
   { id: 5, title: "Software Developer in Test,Menlo Park", url: "safegje" },
 ];
-const candidates = [
-  { id: 1, name: "example", profile: "linked", email: "asdsfgh@gmail.com" },
+const applications = [
+  {
+    id: 1,
+    jobId: 1,
+    name: "example",
+    profile: "linked",
+    email: "asdsfgh@gmail.com",
+  },
 ];
 
 const seed = async () => {
@@ -137,8 +143,8 @@ const seed = async () => {
       })
     );
     await Promise.all(
-      candidates.map((candidate) => {
-        return Candidate.create(candidate);
+      applications.map((application) => {
+        return Application.create(application);
       })
     );
 
