@@ -1,19 +1,19 @@
-import NavBar from "./components/NavBar";
-import About from "./components/About";
-import Values from "./components/Values";
-import Team from "./components/Team";
-import Home from "./components/Home";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "../src/components/Main";
+import P404 from "../src/components/P404";
+import ApplicationForm from "../src/components/ApplicationForm";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <NavBar />
-      <Home />
-      <About />
-      <Values />
-      <Team />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path={"/job/:id"} element={<ApplicationForm />} />
+        <Route exact path={"/"} element={<Main />} />
+        <Route exact path={"*"} element={<P404 />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

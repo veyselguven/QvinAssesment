@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useEffect, useState } from "react";
@@ -10,7 +11,7 @@ const Team = (props) => {
   async function fetchData() {
     try {
       const result = await axios.get(url);
-      console.log("result", result);
+      console.log("result teams", result);
       setTeams(result.data);
     } catch (e) {
       console.log(console.error);

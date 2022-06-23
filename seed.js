@@ -122,7 +122,7 @@ const applications = [
   {
     id: 1,
     jobId: 1,
-    name: "example",
+    fullName: "example",
     profile: "linked",
     email: "asdsfgh@gmail.com",
   },

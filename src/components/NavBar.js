@@ -19,6 +19,9 @@ const NavBar = () => {
             <Link to="home">
               <button>Home</button>
             </Link>
+            <Link to="jobs">
+              <button>Jobs</button>
+            </Link>
           </li>
         </ul>
       </nav>

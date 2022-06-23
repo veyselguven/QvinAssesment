@@ -56,6 +56,7 @@ app.use((req, res, next) => {
 app.use("/api/team_members", require("./api/team"));
 
 // router of application
+app.use("/api/applications", require("./api/appform"));
 
 // job router
 app.use("/api/jobs", require("./api/job"));

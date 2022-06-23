@@ -7,7 +7,7 @@ const Application = db.define("application", {
     primaryKey: true,
     autoIncrement: true,
   },
-  name: {
+  fullName: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
