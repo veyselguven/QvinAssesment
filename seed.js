@@ -112,11 +112,19 @@ const teams = [
   },
 ];
 const jobs = [
-  { id: 1, title: "Sofware Developer,Menlo Park", url: "aafsgg" },
-  { id: 2, title: "Science Lead, Menlo Park", url: "aafkaf" },
-  { id: 3, title: "Medical Lead,Menlo Park", url: "fs" },
-  { id: 4, title: "Product Lead,Menlo Park", url: "afadf" },
-  { id: 5, title: "Software Developer in Test,Menlo Park", url: "safegje" },
+  {
+    id: 1,
+    title: "Sofware Developer,Menlo Park",
+    url: "Apply for Software Developer",
+  },
+  { id: 2, title: "Science Lead, Menlo Park", url: "Apply for Science Lead" },
+  { id: 3, title: "Medical Lead,Menlo Park", url: "Apply for Medical Lead" },
+  { id: 4, title: "Product Lead,Menlo Park", url: "Apply for Product Lead" },
+  {
+    id: 5,
+    title: "Software Developer in Test,Menlo Park",
+    url: "Apply for Software Tester",
+  },
 ];
 const applications = [
   {

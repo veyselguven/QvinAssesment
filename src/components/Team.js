@@ -34,6 +34,21 @@ const Team = (props) => {
           </ul>
         );
       })}
+
+      <h3>What the team says! </h3>
+      <p>
+        At Qvin, the overall north star guide in my daily work, is the ability
+        for us to potentially save lives by empowering women with information
+        about their own health and discover harmful diseases before they spread.
+        <b> Christian, Admin</b>
+      </p>
+      <br />
+      <p>
+        I like working at Qvin because we have a meaningful mission, a novel
+        technology, flexible work hours, and a fast development team. Our
+        founders are open to ideas and want to move forward, and we're helping
+        women take care of their health. <b>Zufar, Developer</b>
+      </p>
     </div>
   );
 };

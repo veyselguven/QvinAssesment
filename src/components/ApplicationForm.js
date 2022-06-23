@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+//import { Link } from "react-scroll/modules";
 
-const ApplicationForm = () => {
+const ApplicationForm = (props) => {
   let { id } = useParams();
 
   const [formContent, setFormContent] = useState({
@@ -12,6 +14,9 @@ const ApplicationForm = () => {
     profile: "",
   });
 
+  // useEffect(() => {
+  //   console.log("props", props);
+  // }, []);
   const _handleOnChange = (event) => {
     let id = event.target.id;
     let value = event.target.value;
@@ -78,8 +83,12 @@ const ApplicationForm = () => {
   };
 
   return (
-    <div>
-      vin is becoming a global leader in Women's Health. Our health technology
+    <div name="applications">
+      <h1>
+        <b>Qvin Jobs</b>
+      </h1>
+      <br />
+      Qvin is becoming a global leader in Women's Health. Our health technology
       platform helps women manage their health better, through a non-invasive
       blood collection device named the “Q-Pad”. You can read more about us on
       our careers page and on{" "}
@@ -117,7 +126,8 @@ const ApplicationForm = () => {
           onChange={_handleOnChange}
           placeholder={"Full Name"}
         />
-
+        <br />
+        <br />
         <input
           type={"text"}
           id={"email"}
@@ -125,15 +135,17 @@ const ApplicationForm = () => {
           onChange={_handleOnChange}
           placeholder={"Email"}
         />
-
+        <br />
+        <br />
         <input
           type={"text"}
           id={"profile"}
           value={formContent.profile}
           onChange={_handleOnChange}
-          placeholder={"Profile"}
+          placeholder={"Linkedin Profile"}
         />
-
+        <br />
+        <br />
         <input type={"button"} value={"Submit"} onClick={_handleSubmit} />
       </form>
     </div>

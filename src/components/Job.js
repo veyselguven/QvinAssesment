@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Job = (props) => {
+  //console.log("props", props);
   const [jobs, setJobs] = useState([]);
 
   let url = "http://localhost:3001/api/jobs";
@@ -25,15 +27,17 @@ const Job = (props) => {
     <div name="jobs">
       <hr />
 
-      <p>Job title</p>
+      <h1>
+        <b>Join a mission that matters</b>
+      </h1>
 
       {jobs.map((job) => {
         return (
           <ul key={job.id}>
+            <li>{job.title}</li>
             <li>
               <Link to={`job/${job.id}`}>{job.url}</Link>
             </li>
-            <li>{job.url}</li>
           </ul>
         );
       })}
