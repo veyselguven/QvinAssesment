@@ -1,10 +1,9 @@
 const db = require("./database");
 const Team = require("./team");
-
 const Job = require("./job");
 const Application = require("./application");
 
-// ?
+// relation between table
 Job.hasMany(Application);
 Application.belongsTo(Job);
 

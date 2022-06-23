@@ -10,6 +10,7 @@ app.use(morgan("dev"));
 // body parsing middleware
 app.use(express.json());
 
+// there was a error
 app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -52,7 +53,7 @@ app.use((req, res, next) => {
 });
 
 // router of team
-app.use("/api/team", require("./api/team"));
+app.use("/api/team_members", require("./api/team"));
 
 // router of application
 

@@ -6,7 +6,7 @@ import axios from "axios";
 const Team = (props) => {
   const [teams, setTeams] = useState([]);
 
-  let url = "http://localhost:3001/api/team";
+  let url = "http://localhost:3001/api/team_members";
   async function fetchData() {
     try {
       const result = await axios.get(url);
