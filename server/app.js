@@ -58,6 +58,7 @@ app.use("/api/team_members", require("./api/team"));
 // router of application
 
 // job router
+app.use("/api/jobs", require("./api/job"));
 
 // sends index.html
 app.use("*", (req, res) => {
