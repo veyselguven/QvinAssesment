@@ -21,10 +21,13 @@ const ApplicationForm = (props) => {
       const result = await axios.get(url);
       // console.log("result", result);
       result.data.forEach((element) => {
-        // console.log(element.title);
-        return element.title;
+        ///console.log(element);
+        if (element.id == id) {
+          console.log(element);
+          setJob(element);
+        }
       });
-      setJob(result.data);
+      //setJob(result.data);
     } catch (e) {
       console.log(console.error);
     }
@@ -98,14 +101,12 @@ const ApplicationForm = (props) => {
       alert("Error: " + message);
     }
   };
+  console.log("job", job);
 
   return (
     <div name="applications">
       <h1>
-        {job.map((currentJob) => {
-          return <p key={currentJob.id}>{currentJob.title}</p>;
-        })}
-        <b>Qvin Jobs</b>
+        <b>Qvin Jobs {job.title}</b>
       </h1>
       <br />
       Qvin is becoming a global leader in Women's Health. Our health technology
