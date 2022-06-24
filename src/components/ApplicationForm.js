@@ -105,9 +105,10 @@ const ApplicationForm = (props) => {
 
   return (
     <div name="applications">
-      <h1>
-        <b>Qvin Jobs {job.title}</b>
-      </h1>
+      <h1>Qvin Jobs</h1>
+      <b>
+        <u>{job.title}</u>
+      </b>
       <br />
       Qvin is becoming a global leader in Women's Health. Our health technology
       platform helps women manage their health better, through a non-invasive
