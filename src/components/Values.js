@@ -5,6 +5,7 @@ const Values = () => {
     <div name="values">
       <hr />
       <h1>Our Values</h1>
+      <br />
       <div>
         <div>
           <h2>Think big and scale</h2>

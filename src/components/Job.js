@@ -36,7 +36,7 @@ const Job = (props) => {
           <ul key={job.id}>
             <li>{job.title}</li>
             <li>
-              <Link to={`job/${job.id}`}>{job.url}</Link>
+              <Link to={`/job/${job.id}`}>{job.url}</Link>
             </li>
           </ul>
         );

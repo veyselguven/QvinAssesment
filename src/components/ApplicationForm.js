@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-//import { Link } from "react-scroll/modules";
 
 const ApplicationForm = (props) => {
   let { id } = useParams();
@@ -13,10 +12,28 @@ const ApplicationForm = (props) => {
     email: "",
     profile: "",
   });
+  const [job, setJob] = useState([]);
 
-  // useEffect(() => {
-  //   console.log("props", props);
-  // }, []);
+  let url = "http://localhost:3001/api/jobs";
+
+  async function fetchData() {
+    try {
+      const result = await axios.get(url);
+      // console.log("result", result);
+      result.data.forEach((element) => {
+        // console.log(element.title);
+        return element.title;
+      });
+      setJob(result.data);
+    } catch (e) {
+      console.log(console.error);
+    }
+  }
+  useEffect(() => {
+    // console.log(id);
+    fetchData();
+  }, []);
+
   const _handleOnChange = (event) => {
     let id = event.target.id;
     let value = event.target.value;
@@ -85,6 +102,9 @@ const ApplicationForm = (props) => {
   return (
     <div name="applications">
       <h1>
+        {job.map((currentJob) => {
+          return <p key={currentJob.id}>{currentJob.title}</p>;
+        })}
         <b>Qvin Jobs</b>
       </h1>
       <br />
