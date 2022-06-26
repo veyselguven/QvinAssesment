@@ -5,6 +5,7 @@ const { Job, Application } = require("../db/index");
 router.post("/", async (req, res, next) => {
   try {
     const { body } = req;
+    console.log("req", req.body);
 
     if (!("fullName" in body) || body["fullName"].length < 2) {
       return res.status(400).send({ message: "Invalid name" });

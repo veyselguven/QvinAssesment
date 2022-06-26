@@ -54,15 +54,15 @@ const ApplicationForm = (props) => {
         return false;
       }
 
-      if (!formContent.email.includes("@")) {
-        alert("Invalid email");
-        return false;
-      }
+      // if (!formContent.email.includes("@")) {
+      //   alert("Invalid email");
+      //   return false;
+      // }
 
-      if (!formContent.profile.includes("http")) {
-        alert("Invalid profile url");
-        return false;
-      }
+      // if (!formContent.profile.includes("http")) {
+      //   alert("Invalid profile url");
+      //   return false;
+      // }
 
       formContent["jobId"] = id; // comes from useParams
 
