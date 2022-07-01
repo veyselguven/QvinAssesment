@@ -54,15 +54,15 @@ const ApplicationForm = (props) => {
         return false;
       }
 
-      // if (!formContent.email.includes("@")) {
-      //   alert("Invalid email");
-      //   return false;
-      // }
+      if (!formContent.email.includes("@")) {
+        alert("Invalid email");
+        return false;
+      }
 
-      // if (!formContent.profile.includes("http")) {
-      //   alert("Invalid profile url");
-      //   return false;
-      // }
+      if (!formContent.profile.includes("http")) {
+        alert("Invalid profile url");
+        return false;
+      }
 
       formContent["jobId"] = id; // comes from useParams
 
@@ -71,7 +71,7 @@ const ApplicationForm = (props) => {
         formContent
       );
 
-      console.log(registerResult);
+      console.log("resgitered", registerResult);
 
       if ("message" in registerResult && registerResult["message"]) {
         alert("Error: " + registerResult["message"]);
@@ -97,10 +97,12 @@ const ApplicationForm = (props) => {
       });
       alert("Registered successfully");
     } catch (e) {
+      console.log("e", e);
       let message = "response" in e ? e.response?.data?.message : e.message;
       alert("Error: " + message);
     }
   };
+
   console.log("job", job);
 
   return (
